@@ -1,1 +1,5 @@
 tiles.setCurrentTilemap(tilemap`level2`)
+let mySprite = sprites.create(assets.image`main character`, SpriteKind.Player)
+tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath5)
+scene.cameraFollowSprite(mySprite)
+controller.moveSprite(mySprite)
