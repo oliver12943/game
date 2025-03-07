@@ -1,3 +1,6 @@
+namespace SpriteKind {
+    export const Artefact = SpriteKind.create()
+}
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenSouth, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level4`)
     tiles.placeOnRandomTile(mySprite, assets.tile`myTile8`)
