@@ -6,6 +6,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenSouth, function (
     tiles.placeOnRandomTile(mySprite, assets.tile`myTile8`)
     mySprite2 = sprites.create(assets.image`myImage1`, SpriteKind.Artefact)
     tiles.placeOnRandomTile(mySprite2, assets.tile`myTile14`)
+    info.changeScoreBy(2000)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
     game.setGameOverEffect(false, effects.none)
@@ -23,3 +24,10 @@ tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath5)
 scene.cameraFollowSprite(mySprite)
 controller.moveSprite(mySprite)
 mySprite.setScale(0.3, ScaleAnchor.Middle)
+info.setScore(1000)
+game.onUpdate(function () {
+    info.changeScoreBy(-1)
+    if (info.score() <= 0) {
+        game.gameOver(false)
+    }
+})
